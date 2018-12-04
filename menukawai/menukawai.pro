@@ -28,10 +28,10 @@ SOURCES += \
     menu1.cpp \
     personaje.cpp \
     game.cpp \
-    villanos.cpp \
     disparos.cpp \
     guerra.cpp \
-    vida.cpp
+    vida.cpp \
+    villanos.cpp
 
 QT+= multimedia
 
@@ -40,10 +40,10 @@ HEADERS += \
     menu1.h \
     personaje.h \
     game.h \
-    villanos.h \
     disparos.h \
     guerra.h \
-    vida.h
+    vida.h \
+    villanos.h
 
 FORMS += \
         mainwindow.ui \

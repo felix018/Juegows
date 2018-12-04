@@ -89,10 +89,10 @@ void personaje::jump()
     }
 }
 void personaje::generar(){
-    c++;   //contador de villanos
-    if(c<11){
-        enemigo = new villanos(); //un nuevo villano
-        enemigo->setPos(WIDTH-100,HEIGHT-130);  //posición de villanos
+    c++;
+    if(c<4){
+        enemigo = new villanos();
+        enemigo->setPos(WIDTH-100,HEIGHT-130);
         scene()->addItem(enemigo);
     }
 }

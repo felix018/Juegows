@@ -46,7 +46,7 @@ public slots:
         void move_right();
         void move_left();
         void generar();
-        void generar2();
+        void generr2();
         void generar3();
         void jump();
         void setHeight(int);

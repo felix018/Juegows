@@ -13,7 +13,7 @@ villanos::villanos(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem (pare
     connect(time, SIGNAL(timeout()),this,SLOT(move()));
     time->start(50);
 }
-/*
+
 void villanos::move(){
     if(pos().x()>500){
         setPos(x()-5,y());
@@ -24,4 +24,4 @@ void villanos::move(){
     }else setPos(x(),y());
 
 }
-*/
+

@@ -41,15 +41,7 @@ void personaje::setBandera()
     bandera=1;                                                          //Bandera para el salto
 }
 
-QRectF personaje::boundingRect() const
-{
 
-}
-
-void personaje::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
-{
-
-}
 
 void personaje::set_jump(int jum)
 {
@@ -100,7 +92,7 @@ void personaje::generar(){
     c++;   //contador de villanos
     if(c<11){
         enemigo = new villanos(); //un nuevo villano
-        //enemigo->setPos(WIDTH-100,HEIGHT-130);  //posición de villanos
+        enemigo->setPos(WIDTH-100,HEIGHT-130);  //posición de villanos
         scene()->addItem(enemigo);
     }
 }

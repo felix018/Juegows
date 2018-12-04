@@ -46,9 +46,9 @@ game::game(QWidget *parent) :
         scene->addItem(per);
         QObject::connect(Jtime, SIGNAL(timeout()),per,SLOT(jump()));
         Jtime->start(45);
-        //generar villano
-        //QObject::connect(TGame, SIGNAL(timeout()),per2,SLOT(generar()));
-        //TGame->start(3500);
+        //generar villano;
+        QObject::connect(TGame, SIGNAL(timeout()),per,SLOT(generar()));
+        TGame->start(3500);
 
     }else if(cont==1){
         scene->setBackgroundBrush(QBrush(QImage(":/imágenes del juego/WhatsApp Image 2018-11-29 at 10.37.13 PM.jpeg")));

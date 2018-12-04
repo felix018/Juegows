@@ -10,7 +10,8 @@
 #include <QGraphicsPixmapItem>
 #include <QGraphicsPixmapItem>
 #include <villanos.h>
-
+#define WIDTH 1000
+#define HEIGHT 400
 
 class personaje: public QObject, public QGraphicsPixmapItem
 {

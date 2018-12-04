@@ -31,7 +31,7 @@ public:
     QGraphicsScene *scene;
     ~game();
     personaje *per;
-    //personaje *per2;
+    personaje *per2;
     void keyPressEvent(QKeyEvent * event);
     void keyReleaseEvent(QKeyEvent * event);
     void setHeight(int w);
@@ -50,8 +50,8 @@ public:
 
     QTimer *Jtime=new QTimer();
     QTimer *TGame = new QTimer();
-public slots:
-    //void F();
+
+
 private slots:
         //void on_save_clicked();
 

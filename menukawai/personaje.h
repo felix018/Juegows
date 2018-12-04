@@ -39,6 +39,7 @@ private:
         int height;
         float delta = 0,delta2;
         int ban_jump=0;
+        int faire=1;
 
 signals:
 public slots:

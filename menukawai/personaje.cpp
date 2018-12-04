@@ -77,7 +77,7 @@ void personaje::jump()
 
         }else{
             delta+=0.1;
-            posy = y() -35*delta + 20*delta*delta ;
+            posy = y() -35*delta + 20*delta*delta*faire ;
             setPos(x()+10,posy);
             if (y() > height - 100){
                 bandera = 0;
@@ -92,7 +92,7 @@ void personaje::generar(){
     c++;
     if(c<4){
         enemigo = new villanos();
-        enemigo->setPos(WIDTH-100,HEIGHT-130);
+        enemigo->setPos(WIDTH-100,HEIGHT-180);
         scene()->addItem(enemigo);
     }
 }

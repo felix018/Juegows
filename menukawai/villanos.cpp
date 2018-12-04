@@ -13,7 +13,7 @@ villanos::villanos(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem(paren
 
 }
 void villanos::move(){
-    if(pos().x() > 500){
+    if(pos().x() > 300){
         setPos(x()-5,y());
         if(cont==0){
             setPixmap((QPixmap(":/imágenes del juego/malo1.png")));

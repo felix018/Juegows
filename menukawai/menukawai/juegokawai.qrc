@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>descarga.jpg</file>
+        <file>img5.jpg</file>
+        <file>OmegaVH19_Trim (online-audio-converter.com).mp3</file>
+        <file>imágenes del juego/muñequito.png</file>
+        <file>imágenes del juego/muñequita2 izquierda.png</file>
+        <file>imágenes del juego/muñequita1 derecha.png</file>
+        <file>imágenes del juego/muñequita2 derecha.png</file>
+        <file>imágenes del juego/muñequita3 derecha.png</file>
+        <file>imágenes del juego/muñequita1.0 izquierda.png</file>
+        <file>imágenes del juego/muñequita2.0 izquierda.png</file>
+        <file>imágenes del juego/muñequita1 izquierda.png</file>
+        <file>imágenes del juego/muñequita3 izquierda.png</file>
+        <file>imágenes del juego/fondo kawai 1.png</file>
+        <file>imágenes del juego/plataforma1 fuego.png</file>
+        <file>imágenes del juego/plataforma2 fuego.png</file>
+        <file>imágenes del juego/WhatsApp Image 2018-11-29 at 10.37.13 PM.jpeg</file>
+        <file>imágenes del juego/fondo kawai 3.jpeg</file>
+        <file>imágenes del juego/plataforma agua 1.png</file>
+        <file>imágenes del juego/plataforma2.png</file>
+        <file>imágenes del juego/malo1.png</file>
+    </qresource>
+</RCC>

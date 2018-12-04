@@ -20,5 +20,6 @@
         <file>imágenes del juego/plataforma agua 1.png</file>
         <file>imágenes del juego/plataforma2.png</file>
         <file>imágenes del juego/malo1.png</file>
+        <file>imágenes del juego/bola de fuego2.png</file>
     </qresource>
 </RCC>

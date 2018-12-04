@@ -27,6 +27,7 @@ class game : public QWidget
     Q_OBJECT
 
 public:
+
     explicit game(QWidget *parent = nullptr);
     QGraphicsScene *scene;
     ~game();

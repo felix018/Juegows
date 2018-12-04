@@ -1,7 +1,7 @@
 #include "disparos.h"
 #include "villanos.h"
 #include "game.h"
-extern game *ga;
+
 
 disparos::disparos()
 {

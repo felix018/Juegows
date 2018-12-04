@@ -31,7 +31,8 @@ SOURCES += \
     disparos.cpp \
     guerra.cpp \
     vida.cpp \
-    villanos.cpp
+    villanos.cpp \
+    proyectiles.cpp
 
 QT+= multimedia
 
@@ -43,7 +44,8 @@ HEADERS += \
     disparos.h \
     guerra.h \
     vida.h \
-    villanos.h
+    villanos.h \
+    proyectiles.h
 
 FORMS += \
         mainwindow.ui \

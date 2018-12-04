@@ -8,6 +8,8 @@
 #include "stdlib.h"
 #include "game.h"
 
+game *gamm;
+
 using namespace std;
 menu1::menu1(QWidget *parent) :
     QWidget(parent),
@@ -45,8 +47,8 @@ void menu1::on_saved_clicked(){
         ofstream tenga;
         tenga.open(b,ios::out);
         if(tenga.fail())cout<<"NELL"<<endl;
-        game *level = new game();
-        level->show();
+        gamm = new game();
+        gamm->show();
         close();
 
     }else{

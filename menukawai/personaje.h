@@ -26,6 +26,7 @@ public:
     void resetBandera();
     int bandera=0,c=0;
      villanos * enemigo;
+     villanos *tramp;
     /*
     QPixmap *paranguti;
     float ancho=47,alto=57;
@@ -47,7 +48,7 @@ public slots:
         void move_right();
         void move_left();
         void generar();
-        void generr2();
+        void generar2();
         void generar3();
         void jump();
         void setHeight(int);

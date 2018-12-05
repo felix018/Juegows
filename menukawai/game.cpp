@@ -18,7 +18,7 @@ game::game(QWidget *parent) :
 
     interacion=new QTimer;
     interacion->start(10);
-    connect(interacion,SIGNAL (timeout()),SLOT (F()));
+    //connect(interacion,SIGNAL (timeout()),SLOT (F()));
 
     scene = new QGraphicsScene();
     scene->setSceneRect(0,0,1000,400);
@@ -26,10 +26,17 @@ game::game(QWidget *parent) :
     ui->view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);    //Quita la barra de desplazamineto lateral
     ui->view->setScene(scene);
     setFixedSize(WIDTH,HEIGHT);
-    qDebug()<<cont<<" "<<p1<<" "<<p2;
+    qDebug()<<cont<<" "<<p1;
 //comienzo intento del personaje
     if(cont==0){
          scene->setBackgroundBrush(QBrush(QImage(":/imágenes del juego/fondo kawai 1.png")));
+         plat->setPixmap(QPixmap(":/imágenes del juego/pinchosos.png"));
+         if(plat->collidesWithItem(per)){
+            vid->decrece1();
+            qDebug()<<"mori";
+         }
+         //plat->setPos(420,200);
+         //scene->addItem(plat);
          /*
         plataforma->setPixmap(QPixmap(":/imágenes del juego/plataforma1 fuego.png"));
         plataforma->setPos(420,200);
@@ -48,12 +55,14 @@ game::game(QWidget *parent) :
         Jtime->start(45);
         //generar villano;
         QObject::connect(TGame, SIGNAL(timeout()),per,SLOT(generar()));
-        TGame->start(3000);
+        TGame->start(2000);
+        vid = new vida();
+        niveles();
 
-    }else if(cont==1){
-        scene->setBackgroundBrush(QBrush(QImage(":/imágenes del juego/WhatsApp Image 2018-11-29 at 10.37.13 PM.jpeg")));
 
     }
+
+
 }
 void game::keyPressEvent(QKeyEvent *event)
 {
@@ -67,8 +76,20 @@ void game::keyPressEvent(QKeyEvent *event)
         per->setPixmap(QPixmap(":/imágenes del juego/muñequita1 izquierda.png"));
         qDebug() << "right";
 
-    }else if(event->key()==Qt::Key_S){
+    }else if(event->key()==Qt::Key_J){ //en esta se salta
         per->setBandera();
+    }else if(event->key()==Qt::Key_K){
+        balin=new disparos();
+        per->setPixmap(QPixmap(":/imágenes del juego/muñequita shoot bue.png"));
+        balin->setPixmap(QPixmap(":/imágenes del juego/espin.png"));
+        balin->setPos(per->x()+60,per->y()+20); //posicionar la espada con respecto al per
+        scene->addItem(balin);
+        qDebug() << "piu";
+    }
+    if(per->pos().x()>800 && per->c>=5){
+        cont++;
+        niveles();
+        puntajes();
     }
 }
 void game::keyReleaseEvent(QKeyEvent *event){
@@ -79,6 +100,34 @@ void game::keyReleaseEvent(QKeyEvent *event){
         per->resettBanLeft();
         per->setPixmap(QPixmap(":/imágenes del juego/muñequita3 izquierda.png"));
     }
+}
+void game::puntajes(){
+    p1+=10;
+    //tex->setPlainText(QString("puntaje"));
+    ui->puntaje->display(p1);
+}
+void game::niveles(){
+//--------------------------------------------------------------------level 2 :3
+    if(cont==1){
+        TGame->stop();
+        scene->removeItem(per);
+        scene->clear();
+
+        //comienza nivel 2
+        scene->setBackgroundBrush(QBrush(QImage(":/imágenes del juego/WhatsApp Image 2018-11-29 at 10.37.13 PM.jpeg")));
+        scene->addItem(per);
+
+        //definimos al personaje otra vez
+        per->setPixmap(QPixmap(":/imágenes del juego/muñequita2 derecha.png"));
+        per->setHeight(HEIGHT);   //altura máxima
+
+        per->setPos(15, 250);//posición del personaje
+        per->c=0;   //para volver a ver villanos
+
+        TGame->start(2500);
+    }
+//-----------------------------------------------------------------------------------level3
+
 }
 
 

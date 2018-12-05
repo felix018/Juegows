@@ -21,5 +21,9 @@
         <file>imágenes del juego/plataforma2.png</file>
         <file>imágenes del juego/malo1.png</file>
         <file>imágenes del juego/bola de fuego2.png</file>
+        <file>imágenes del juego/muñequita shoot.png</file>
+        <file>imágenes del juego/espin.png</file>
+        <file>imágenes del juego/muñequita shoot bue.png</file>
+        <file>imágenes del juego/pinchosos.png</file>
     </qresource>
 </RCC>

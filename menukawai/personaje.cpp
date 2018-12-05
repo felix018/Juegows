@@ -90,11 +90,14 @@ void personaje::jump()
 }
 void personaje::generar(){
     c++;
-    if(c<4){
+    if(c<12){
         enemigo = new villanos();
         enemigo->setPos(WIDTH-100,HEIGHT-180);
         scene()->addItem(enemigo);
     }
+}
+void personaje::generar2(){
+
 }
 
 

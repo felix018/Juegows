@@ -5,6 +5,7 @@
 #include <QTimer>
 #include <QGraphicsTextItem>
 #include <QMediaPlayer>
+#include "personaje.h"
 
 
 class vida : public QObject
@@ -13,6 +14,13 @@ class vida : public QObject
 public:
     explicit vida(QObject *parent = nullptr);
     int vid1=5;
+    QTimer *tim=new QTimer();
+    QGraphicsTextItem *over;
+    void decrece1();
+    void GameOver();
+private slots:
+
+
 
 
 signals:   

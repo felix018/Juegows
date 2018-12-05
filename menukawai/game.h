@@ -14,6 +14,8 @@
 #include <QGraphicsPixmapItem>
 #include <QWidget>
 #include <personaje.h>
+#include "vida.h"
+#include "disparos.h"
 
 #define WIDTH 1000
 #define HEIGHT 400
@@ -41,6 +43,8 @@ public:
     int p1=0, p2=0;
     int cambio=0;
     int flag=0;
+    QGraphicsTextItem *tex;
+    disparos *balin;
 
     QTimer *interacion;
 
@@ -48,9 +52,18 @@ public:
 
     QGraphicsPixmapItem *plat=new QGraphicsPixmapItem();
 
+    vida *vid;
+    void niveles();
+    void puntajes();
+
+
 
     QTimer *Jtime=new QTimer();
     QTimer *TGame = new QTimer();
+    QTimer *Tcaer = new QTimer();
+    QTimer *time_cambio = new QTimer();
+    QTimer *puntos = new QTimer();
+
 
 
 private slots:

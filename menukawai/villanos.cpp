@@ -4,12 +4,18 @@
 #include <QFont>
 #include "personaje.h"
 #include <typeinfo>
+#include "proyectiles.h"
+#include "game.h"
+#include <QFont>
 
 villanos::villanos(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem(parent)
 {
     setPixmap((QPixmap(":/imágenes del juego/malo1.png")));
     connect(timer, SIGNAL(timeout()),this,SLOT(move()));
+    connect(pum, SIGNAL(timeout()),this,SLOT(shoot()));
+
     timer->start(50);
+    pum->start(2000);
 
 }
 void villanos::move(){
@@ -20,4 +26,9 @@ void villanos::move(){
             cont=1;
         }
     }else setPos(x(),y());
+}
+void villanos::shoot(){
+    proyectiles *bal=new proyectiles();
+    bal->setPos(this->x()-20,this->y()+25);
+    scene()->addItem(bal);
 }

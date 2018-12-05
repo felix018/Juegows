@@ -8,6 +8,7 @@
 #include <QDebug>
 #include <QMediaPlayer>
 #include "personaje.h"
+#include "vida.h"
 
 class proyectiles : public QObject, public QGraphicsPixmapItem
 {

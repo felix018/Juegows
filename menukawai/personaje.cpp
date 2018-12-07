@@ -77,7 +77,7 @@ void personaje::jump()
 
         }else{
             delta+=0.1;
-            posy = y() -35*delta + 20*delta*delta*faire ;
+            posy = y() -35*delta + 20*delta*delta ;
             setPos(x()+10,posy);
             if (y() > height - 100){
                 bandera = 0;
@@ -97,6 +97,9 @@ void personaje::generar(){
     }
 }
 void personaje::generar2(){
+
+}
+void personaje::generar3(){
 
 }
 

@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <fstream>
 #include "mainwindow.h"
+#include "trampa.h"
 #define RUTA_ARCHIVO "guardar.txt"
 
 extern menu1 *menu;
@@ -31,12 +32,13 @@ game::game(QWidget *parent) :
     if(cont==0){
          scene->setBackgroundBrush(QBrush(QImage(":/imágenes del juego/fondo kawai 1.png")));
          plat->setPixmap(QPixmap(":/imágenes del juego/pinchosos.png"));
+         plat->setPos(19,288);
+         scene->addItem(plat);
          if(plat->collidesWithItem(per)){
             vid->decrece1();
             qDebug()<<"mori";
          }
-         //plat->setPos(420,200);
-         //scene->addItem(plat);
+
          /*
         plataforma->setPixmap(QPixmap(":/imágenes del juego/plataforma1 fuego.png"));
         plataforma->setPos(420,200);
@@ -125,6 +127,9 @@ void game::niveles(){
         per->c=0;   //para volver a ver villanos
 
         TGame->start(2500);
+        trampa *trap=new trampa();
+        trap->setPos(this->x(),this->y()+25);
+        scene->addItem(trap);
     }
 //-----------------------------------------------------------------------------------level3
 

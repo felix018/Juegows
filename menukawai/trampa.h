@@ -15,12 +15,15 @@ public:
     explicit trampa(QObject *parent = nullptr);
     QTimer * tempo = new QTimer();
     int cont=0;
+    int HEI=400;
 private:
     int contador=0;
 
 signals:
 
 public slots:
+    void move();
+    //void fuego();
 };
 
 #endif // TRAMPA_H

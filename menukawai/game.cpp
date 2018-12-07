@@ -31,13 +31,8 @@ game::game(QWidget *parent) :
 //comienzo intento del personaje
     if(cont==0){
          scene->setBackgroundBrush(QBrush(QImage(":/imágenes del juego/fondo kawai 1.png")));
-         plat->setPixmap(QPixmap(":/imágenes del juego/pinchosos.png"));
-         plat->setPos(19,288);
-         scene->addItem(plat);
-         if(plat->collidesWithItem(per)){
-            vid->decrece1();
-            qDebug()<<"mori";
-         }
+
+
 
          /*
         plataforma->setPixmap(QPixmap(":/imágenes del juego/plataforma1 fuego.png"));
@@ -47,7 +42,7 @@ game::game(QWidget *parent) :
         plat->setPos(200,120);
         scene->addItem(plat);
         */
-;//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
         per= new personaje();
         per->setPixmap(QPixmap(":/imágenes del juego/muñequita2 derecha.png"));
         per->setPos(15,280) ;
@@ -60,6 +55,17 @@ game::game(QWidget *parent) :
         TGame->start(2000);
         vid = new vida();
         niveles();
+
+//---------------------------------------------------------------------------------
+        plat->setPixmap(QPixmap(":/imágenes del juego/pini.png"));
+        plat->setPos(19,288);
+        scene->addItem(plat);
+        if(plat->collidesWithItem(per)){
+            vid->decrece1();
+            qDebug()<<"mori";
+        }
+
+
 
 
     }

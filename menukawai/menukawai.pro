@@ -33,7 +33,9 @@ SOURCES += \
     vida.cpp \
     villanos.cpp \
     proyectiles.cpp \
-    trampa.cpp
+    trampa.cpp \
+    aliens.cpp \
+    piedrasa.cpp
 
 QT+= multimedia
 
@@ -47,7 +49,9 @@ HEADERS += \
     vida.h \
     villanos.h \
     proyectiles.h \
-    trampa.h
+    trampa.h \
+    aliens.h \
+    piedrasa.h
 
 FORMS += \
         mainwindow.ui \

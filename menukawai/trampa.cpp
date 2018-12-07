@@ -16,23 +16,28 @@ trampa::trampa(QObject *parent)
 
 }
 void trampa::move(){
-    QList<QGraphicsItem *> colliding_items = collidingItems(); //lista de elemntos que colisionan
-    for (int i = 0, n = colliding_items.size(); i < n; i++ ){
-        if (typeid(*(colliding_items[i])) == typeid(personaje)){
+    QList<QGraphicsItem *> collidin = collidingItems(); //lista de elemntos que colisionan
+    for (int i = 0, n = collidin.size(); i < n; i++ ){
+        if (typeid(*(collidin[i])) == typeid(personaje)){
             gamm->scene->removeItem(this);
-            if(colliding_items[i]==gamm->per){
+            if(collidin[i]==gamm->per){
                 gamm->vid->decrece1();
                  qDebug()<<"bye2";
             }
             gamm->vt=(gamm->vid->vid1)*10;
-            qDebug()<<gamm->vt<<"zzzzzzz";
+            qDebug()<<gamm->vt<<"zz";
             return;
         }
     }
     setPos(x(), y()+25);
     if (y() == HEI){
-        gamm->scene->removeItem(this);
-        delete this; //liberar memoria
+        y()-400;
+        if(y()==0){
+            gamm->scene->removeItem(this);
+            delete this; //liberar memoria
+        }
+        //gamm->scene->removeItem(this);
+        //delete this; //liberar memoria
     }
 
 }

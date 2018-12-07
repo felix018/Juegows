@@ -26,5 +26,10 @@
         <file>imágenes del juego/muñequita shoot bue.png</file>
         <file>imágenes del juego/pinchosos.png</file>
         <file>imágenes del juego/prefuego azul.png</file>
+        <file>imágenes del juego/pini.png</file>
+        <file>imágenes del juego/alien1.png</file>
+        <file>imágenes del juego/alien2.png</file>
+        <file>imágenes del juego/alien3.png</file>
+        <file>imágenes del juego/alien4.png</file>
     </qresource>
 </RCC>

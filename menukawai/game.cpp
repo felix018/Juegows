@@ -30,6 +30,12 @@ game::game(QWidget *parent) :
     setFixedSize(WIDTH,HEIGHT);
     qDebug()<<cont<<" "<<p1;
 //-----------------------------comienzo intento del personaje-------------------------------------
+
+
+}
+
+void game::iniciar(int a){
+    if (a == 1) player = true;
     if(cont==0){
          scene->setBackgroundBrush(QBrush(QImage(":/imágenes del juego/fondo kawai 1.png")));
 
@@ -46,7 +52,7 @@ game::game(QWidget *parent) :
         Jtime->start(45);
 //---------------------------personaje2----------------------------------------------------------
 
-        if(player==true){
+        if(a==1){
             per2=new personaje();
             per2->setPixmap(QPixmap(":/imágenes del juego/per2.png"));
             per2->setPos(15,280);
@@ -79,7 +85,6 @@ game::game(QWidget *parent) :
 
 
     }
-
 
 }
 //-------------------teclas del juego-------------------------------------------------------------
@@ -116,7 +121,7 @@ void game::keyPressEvent(QKeyEvent *event)
             qDebug()<<"mori";
         }
     }
-    /*
+
 
     if(player==true){
         if(event->key()==Qt::Key_Z){
@@ -129,7 +134,7 @@ void game::keyPressEvent(QKeyEvent *event)
             qDebug() << "right2";
         }else if(event->key()==Qt::Key_S){ //en esta se salta
             per2->setBandera();
-        }else if(event->key()==Qt::Key_K){
+        }else if(event->key()==Qt::Key_A){
             balin1=new disparos();
             per2->setPixmap(QPixmap(":/imágenes del juego/per2 atack.png"));
             balin1->setPixmap(QPixmap(":/imágenes del juego/espin.png"));
@@ -139,7 +144,7 @@ void game::keyPressEvent(QKeyEvent *event)
         }
 
     }
-*/
+
 }
 void game::keyReleaseEvent(QKeyEvent *event){
     if (event->key() == Qt::Key_M){

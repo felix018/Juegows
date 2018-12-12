@@ -49,6 +49,7 @@ void menu1::on_saved_clicked(){
         tenga.open(b,ios::out);
         if(tenga.fail())cout<<"NELL"<<endl;
         gamm = new game();
+        gamm->iniciar(a);
 
         gamm->show();
         close();

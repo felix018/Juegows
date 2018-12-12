@@ -83,6 +83,8 @@ public:
 private slots:
         //void on_save_clicked();
 
+public:
+    void iniciar(int jugador = 0);
 
 private:
     Ui::game *ui;

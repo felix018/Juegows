@@ -3,13 +3,17 @@
 #include "game.h"
 #include <QFont>
 #include "personaje.h"
+//#include "disparoalien.h"
+#include <typeinfo>
 
-aliens::aliens(QObject *parent) : QObject(parent)
+
+
+aliens::aliens(QObject *parent)
 {
     connect(tempo, SIGNAL(timeout()),this,SLOT(move()));//timer para mover del alien raro
-    connect(pom, SIGNAL(timeout()),this,SLOT(shoot())); //timer para los disparos
+    //connect(pom, SIGNAL(timeout()),this,SLOT(shoot())); //timer para los disparos
     tempo->start(50);
-    pom->start(2500);
+    //pom->start(2500);
 
 }
 void aliens::move(){
@@ -35,3 +39,12 @@ void aliens::move(){
     }
 
 }
+/*
+void aliens::shoot(){
+    qDebug()<<"no joda";
+    disparoalien *bala = new disparoalien();
+    bala->setPos(this->x(),this->y());
+    scene()->addItem(bala);
+
+}
+*/

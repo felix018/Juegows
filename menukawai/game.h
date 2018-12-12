@@ -16,7 +16,8 @@
 #include <personaje.h>
 #include "vida.h"
 #include "disparos.h"
-
+#include "trampa.h"
+#include "caida.h"
 #define WIDTH 1000
 #define HEIGHT 400
 
@@ -32,6 +33,14 @@ public:
 
     explicit game(QWidget *parent = nullptr);
     QGraphicsScene *scene;
+    QGraphicsRectItem *rect;
+    trampa *trap;
+    trampa *trick;
+    trampa *team;
+    caida *huevo;
+    caida *huevo2;
+    caida *huevo3;
+
     ~game();
     personaje *per;
     personaje *per2;
@@ -43,8 +52,11 @@ public:
     int p1=0, p2=0;
     int cambio=0;
     int flag=0;
+    bool player=false;
+    int huevos=10;
     QGraphicsTextItem *tex;
     disparos *balin;
+    disparos *balin1;
 
     QTimer *interacion;
 
@@ -55,13 +67,15 @@ public:
     vida *vid;
     void niveles();
     void puntajes();
+    void boom();
 
 
 
     QTimer *Jtime=new QTimer();
     QTimer *TGame = new QTimer();
-    QTimer *Tcaer = new QTimer();
+    QTimer *TGame2 = new QTimer();
     QTimer *time_cambio = new QTimer();
+    QTimer *Tcaer = new QTimer();
     QTimer *puntos = new QTimer();
 
 

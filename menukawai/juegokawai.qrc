@@ -31,5 +31,12 @@
         <file>imágenes del juego/alien2.png</file>
         <file>imágenes del juego/alien3.png</file>
         <file>imágenes del juego/alien4.png</file>
+        <file>imágenes del juego/huevo san.png</file>
+        <file>imágenes del juego/boom.png</file>
+        <file>imágenes del juego/fondo kawai 2.png</file>
+        <file>imágenes del juego/per2.png</file>
+        <file>imágenes del juego/per22.png</file>
+        <file>imágenes del juego/per2 atack.png</file>
+        <file>imágenes del juego/per3 izquierda.png</file>
     </qresource>
 </RCC>

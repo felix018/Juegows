@@ -5,7 +5,9 @@
 #include<QGraphicsScene>
 #include<QObject>
 #include "menu1.h"
-
+#include "game.h"
+game *gamm;
+int a = 0;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -13,16 +15,11 @@ MainWindow::MainWindow(QWidget *parent) :
 {
 
     ui->setupUi(this);
-    /*
-    QObject *padrejose = nullptr;
-    personaje *pancracio=new personaje(200,200,padrejose);
-    QGraphicsScene *cenando=new QGraphicsScene(0,0,400,400);
-    cenando->addItem(pancracio);
-    ui->graphicsView->setScene(cenando);
-    ui->graphicsView->adjustSize();
-    pancracio->setFocus();
-    */
+    //gamm=new game();
+    //gamm->player=true;
+
 }
+
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -34,4 +31,15 @@ void MainWindow::on_pushButton_clicked()
     menu1 *eleccion = new menu1();
     eleccion->show();
     close();
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    //gamm=new game();
+    //gamm->player=true;
+    a=1;
+    menu1 *eleccion = new menu1();
+    eleccion->show();
+    close();
+
 }

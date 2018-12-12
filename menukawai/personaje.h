@@ -10,6 +10,8 @@
 #include <QGraphicsPixmapItem>
 #include <QGraphicsPixmapItem>
 #include <villanos.h>
+#include "aliens.h"
+#include "caida.h"
 #define WIDTH 1000
 #define HEIGHT 400
 
@@ -27,6 +29,7 @@ public:
     int bandera=0,c=0;
      villanos * enemigo;
      villanos *tramp;
+     caida *caer;
     /*
     QPixmap *paranguti;
     float ancho=47,alto=57;

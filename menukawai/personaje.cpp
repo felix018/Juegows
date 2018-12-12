@@ -2,6 +2,7 @@
 #include <iostream>
 #include<QDebug>
 #include <QGraphicsPixmapItem>
+
 personaje::personaje(QGraphicsItem *parent): QObject (), QGraphicsPixmapItem(parent)
 {
     //draw player
@@ -97,9 +98,13 @@ void personaje::generar(){
     }
 }
 void personaje::generar2(){
+     aliens *alien = new aliens();
+     alien->setPos(WIDTH-100, 15);  //se define posición del aire
+     scene()->addItem(alien);
 
 }
 void personaje::generar3(){
+
 
 }
 

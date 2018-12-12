@@ -20,12 +20,7 @@ public:
      QGraphicsTextItem *yey;
      QGraphicsPixmapItem *nani;
      int cont=0,cont1=0;
-     int numrocas=0;
-     int flag=0;
-     int head=0;
-     int vidaR=100;
-     void win();
-
+     int controc=0;
 
 
 signals:

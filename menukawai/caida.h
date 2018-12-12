@@ -1,5 +1,5 @@
-#ifndef ALIENS_H
-#define ALIENS_H
+#ifndef CAIDA_H
+#define CAIDA_H
 
 #include <QObject>
 #include <QGraphicsPixmapItem>
@@ -8,22 +8,23 @@
 #include <QGraphicsScene>
 #include <typeinfo>
 
-class aliens : public QObject, public QGraphicsPixmapItem
+class caida : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 public:
-    explicit aliens(QObject *parent = nullptr);
+    explicit caida(QObject *parent = nullptr);
     QTimer * tempo = new QTimer();
-    QTimer *pom = new QTimer();
-    int cont=0;
+    int contplum=0;
+    //int HEI=400;
 private:
     int contador=0;
+
 
 signals:
 
 public slots:
-    void move();
-    //void shoot();
+     void move();
+
 };
 
-#endif // ALIENS_H
+#endif // CAIDA_H

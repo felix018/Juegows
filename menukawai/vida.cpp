@@ -3,6 +3,7 @@
 #include "game.h"
 #include <QFont>
 #include "personaje.h"
+#include "trampa.h"
 
 extern game *gamm;
 
@@ -24,11 +25,14 @@ void vida::GameOver(){
       gamm->scene->setBackgroundBrush(Qt::black);
       gamm->scene->removeItem(gamm->per);
       gamm->TGame->stop();
+      gamm->TGame2->stop();
+      gamm->puntos->stop();
       gamm->scene->clear();
       over->setPlainText(QString("GAME OVER"));
       over->setPos(300, 100);
       over->setDefaultTextColor(Qt::white);
       over->setFont(QFont("DEATH",50));
       gamm->scene->addItem(over);
+
 }
 

@@ -22,6 +22,10 @@ void trampa::move(){
             if(collidin[i]==gamm->per){
                 gamm->vid->decrece1();
                  qDebug()<<"bye2";
+                 if(gamm->player==true){
+                     gamm->vid2->decrece2();
+                     qDebug()<<"me fui";
+                 }
             }
             gamm->vt=(gamm->vid->vid1)*10;
             qDebug()<<gamm->vt<<"zz";

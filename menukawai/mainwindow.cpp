@@ -5,6 +5,7 @@
 #include<QGraphicsScene>
 #include<QObject>
 #include "menu1.h"
+#include "menus2.h"
 #include "game.h"
 game *gamm;
 menu1 *eleccion;
@@ -41,6 +42,14 @@ void MainWindow::on_pushButton_3_clicked()
     a=1;
     eleccion = new menu1();
     eleccion->show();
+    close();
+
+}
+
+void MainWindow::on_load_clicked()
+{
+    menus2 *men = new menus2();
+    men->show();
     close();
 
 }

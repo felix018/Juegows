@@ -36,7 +36,9 @@ SOURCES += \
     aliens.cpp \
     caida.cpp \
     load.cpp \
-    piedritas.cpp
+    piedritas.cpp \
+    menus2.cpp \
+    gemare.cpp
 
 QT+= multimedia
 
@@ -53,12 +55,15 @@ HEADERS += \
     aliens.h \
     caida.h \
     load.h \
-    piedritas.h
+    piedritas.h \
+    menus2.h \
+    gemare.h
 
 FORMS += \
         mainwindow.ui \
     menu1.ui \
-    game.ui
+    game.ui \
+    menus2.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

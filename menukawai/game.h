@@ -59,7 +59,7 @@ public:
     QGraphicsTextItem *tex;
     disparos *balin;
     disparos *balin1;
-    joyas *gem;
+    //joyas *gem;
 
     QTimer *interacion;
 

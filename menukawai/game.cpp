@@ -8,10 +8,11 @@
 #include "trampa.h"
 #include "caida.h"
 #include "piedritas.h"
-
+//#include "gemawin.h"
 #include <QString>
 #include <ctype.h>
 #include "stdlib.h"
+#include "gemare.h"
 #define RUTA_ARCHIVO "guardar.txt"
 
 extern menu1 *eleccion;
@@ -272,9 +273,15 @@ void game::niveles(){
 
         per->setPos(15, 250);//posición del personaje
         per->c=0;   //para volver a ver villanos
+
         piedritas *pier = new piedritas();
-        pier->setPos(50,30);
+        pier->setPos(100,70);
         scene->addItem(pier);
+        gemare *gemi = new gemare();
+        gemi->setPos(730,70);
+        scene->addItem(gemi);
+
+
 
 
     }

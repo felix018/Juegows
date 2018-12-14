@@ -1,22 +1,32 @@
-#include "proyectiles.h"
+#include "piedritas.h"
 #include "game.h"
+#include "villanos.h"
+#include "personaje.h"
 extern game *gamm;
 
-
-proyectiles::proyectiles()
+piedritas::piedritas()
 {
-    setPixmap(QPixmap(":/imágenes del juego/bola de fuego2.png"));
+
+    setPixmap(QPixmap(":/imágenes del juego/azul.png"));
     connect(tel,SIGNAL(timeout()),this, SLOT(move()));
+    connect(vil,SIGNAL(timeout()),gamm->per, SLOT(generar()));
+
     tel->start(50);
 
+
 }
-void proyectiles::move(){
+
+
+
+
+void piedritas::move(){
     QList<QGraphicsItem *> colliding_items = collidingItems(); //lista de elemntos que colisionan
     for (int i = 0, n = colliding_items.size(); i < n; i++ ){
         if (typeid(*(colliding_items[i])) == typeid(personaje)){
             gamm->scene->removeItem(this);
             if(colliding_items[i]==gamm->per){
-                gamm->vid->decrece1();
+                gamm->vid->decreceJazul();
+                vil->start(2500);
                 if(gamm->player==true){
                     gamm->vid2->decrece2();
                 }
@@ -27,12 +37,10 @@ void proyectiles::move(){
              return;
         }
     }
-    setPos(x()-20, y());
+    //setPos(x()-20, y());
     if (x() < 0){
         gamm->scene->removeItem(this);
         delete this;
     }
 }
-
-
 

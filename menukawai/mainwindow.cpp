@@ -7,6 +7,7 @@
 #include "menu1.h"
 #include "game.h"
 game *gamm;
+menu1 *eleccion;
 int a = 0;
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -28,7 +29,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    menu1 *eleccion = new menu1();
+    eleccion = new menu1();
     eleccion->show();
     close();
 }
@@ -38,7 +39,7 @@ void MainWindow::on_pushButton_3_clicked()
     //gamm=new game();
     //gamm->player=true;
     a=1;
-    menu1 *eleccion = new menu1();
+    eleccion = new menu1();
     eleccion->show();
     close();
 

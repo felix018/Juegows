@@ -7,12 +7,18 @@
 #include "mainwindow.h"
 #include "trampa.h"
 #include "caida.h"
+#include "piedritas.h"
+
+#include <QString>
+#include <ctype.h>
+#include "stdlib.h"
 #define RUTA_ARCHIVO "guardar.txt"
 
-extern menu1 *menu;
+extern menu1 *eleccion;
 using namespace std;
 
 game::game(QWidget *parent) :
+
     QWidget(parent),
     ui(new Ui::game)
 {
@@ -60,6 +66,7 @@ void game::iniciar(int a){
             scene->addItem(per2);
             QObject::connect(Jtime, SIGNAL(timeout()),per2,SLOT(jump()));
 
+
         }
 
 //------------------------------------timers de los villanos y de las trampas----------------------
@@ -85,6 +92,8 @@ void game::iniciar(int a){
 
 
     }
+//--------------------------------gemas---------------------------------------------------
+
 
 }
 //-------------------teclas del juego-------------------------------------------------------------
@@ -119,7 +128,13 @@ void game::keyPressEvent(QKeyEvent *event)
         if(rect->collidesWithItem(per)){
             vid->decrece1();
             qDebug()<<"mori";
+            if(player==true){
+                vid2->decrece2();
+                qDebug()<<"mori2";
+            }
+
         }
+
     }
 
 
@@ -142,6 +157,9 @@ void game::keyPressEvent(QKeyEvent *event)
             scene->addItem(balin1);
             qDebug() << "piu2";
         }
+        if(vid->vid1<=0){
+            scene->removeItem(balin1);
+        }
 
     }
 
@@ -154,11 +172,23 @@ void game::keyReleaseEvent(QKeyEvent *event){
         per->resettBanLeft();
         per->setPixmap(QPixmap(":/imágenes del juego/muñequita3 izquierda.png"));
     }
+    if(player==true){
+        if(event->key()==Qt::Key_Z){
+            per2->resettBanRight();
+        }else if(event->key() == Qt::Key_X){
+            per2->resettBanLeft();
+        }
+
+    }
 }
 void game::puntajes(){
     p1+=10;
+    p2+=10;
     //tex->setPlainText(QString("puntaje"));
     ui->puntaje->display(p1);
+    if(player==true){
+        ui->puntaje2->display(p2);
+    }
 }
 void game::niveles(){
 //--------------------------------------------------------------------level 2 :3
@@ -168,17 +198,29 @@ void game::niveles(){
         TGame2->stop();
         scene->removeItem(per);
         scene->clear();
+        if(player==true){
+            scene->removeItem(per2);
+            qDebug()<<"ya me fui amiguito";
+        }
 //-------------------------------------------
 
         //comienza nivel 2
         scene->setBackgroundBrush(QBrush(QImage(":/imágenes del juego/fondo kawai 2.png")));
         scene->addItem(per);
+        if(player==true){
+            scene->addItem(per2);
+        }
 
         //definimos al personaje otra vez
         per->setPixmap(QPixmap(":/imágenes del juego/muñequita2 derecha.png"));
         per->setHeight(HEIGHT);   //altura máxima
 
         per->setPos(15, 250);//posición del personaje
+        if(player==true){
+            per2->setPixmap(QPixmap(":/imágenes del juego/per2.png"));
+            per2->setPos(15,280);
+            per2->setHeight(HEIGHT);
+        }
         per->c=0;   //para volver a ver villanos
 
         TGame->start(2500); //comienza de nuevo los timers
@@ -217,7 +259,25 @@ void game::niveles(){
         TGame->stop();
         TGame2->stop();
         scene->removeItem(per);
-        scene->clear();}
+        scene->removeItem(huevo);
+        scene->removeItem(huevo2);
+        scene->removeItem(huevo3);
+        scene->clear();
+//----------------------------------------------------------------------------------------
+        scene->setBackgroundBrush(QBrush(QImage(":/imágenes del juego/nivel33.png")));
+        scene->addItem(per);
+       //------------definir otra vez--------------------------------------
+        per->setPixmap(QPixmap(":/imágenes del juego/muñequita2 derecha.png"));
+        per->setHeight(HEIGHT);   //altura máxima
+
+        per->setPos(15, 250);//posición del personaje
+        per->c=0;   //para volver a ver villanos
+        piedritas *pier = new piedritas();
+        pier->setPos(50,30);
+        scene->addItem(pier);
+
+
+    }
 //-----------------------------------------------------------------------------------level3
 
 }
@@ -232,3 +292,17 @@ game::~game()
 }
 
 
+
+void game::on_guardado_clicked()
+{
+    ofstream save;                                                   //Define el archivo en modo de escritura
+       save.open(eleccion->b,ios::out);                                     //Abre el archivo
+       save<<cont<<endl;                                                //Escribe el nivel actual
+       save<<p1<<endl;                                                  //Escriber el puntaje del jugador 1
+       if(player==true){
+           save<<p2<<endl;
+       }
+                                                        //Escribe el puntaje del jugador 2
+       save.close();
+
+}

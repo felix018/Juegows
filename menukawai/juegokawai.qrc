@@ -38,5 +38,8 @@
         <file>imágenes del juego/per22.png</file>
         <file>imágenes del juego/per2 atack.png</file>
         <file>imágenes del juego/per3 izquierda.png</file>
+        <file>imágenes del juego/nivel3.png</file>
+        <file>imágenes del juego/azul.png</file>
+        <file>imágenes del juego/nivel33.png</file>
     </qresource>
 </RCC>

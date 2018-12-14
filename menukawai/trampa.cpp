@@ -16,7 +16,7 @@ trampa::trampa(QObject *parent)
 
 }
 void trampa::move(){
-    QList<QGraphicsItem *> collidin = collidingItems(); //lista de elemntos que colisionan
+    QList<QGraphicsItem *> collidin = collidingItems(); //lista de elementos que colisionan
     for (int i = 0, n = collidin.size(); i < n; i++ ){
         if (typeid(*(collidin[i])) == typeid(personaje)){
             if(collidin[i]==gamm->per){

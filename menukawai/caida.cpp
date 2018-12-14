@@ -28,7 +28,11 @@ void caida::move(){
         }
     }
     setPos(x(), y()+20);
-    if(y()>400) gamm->scene->removeItem(this);
-    qDebug()<<"caigo";
+    if(y()>400) {gamm->scene->removeItem(this);
+        tempo->stop();
+        qDebug()<<"caigo";
+    }
+
+
     //delete(this);
 }

@@ -17,7 +17,7 @@ villanos::villanos(QGraphicsItem *parent) : QObject(), QGraphicsPixmapItem(paren
 
 
     timer->start(50);
-    pum->start(2000);
+    pum->start(3000);
     //bon->start(50);
 
 }

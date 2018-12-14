@@ -20,6 +20,18 @@ void vida::decrece1(){
     qDebug()<<vid1;
     if(vid1<=0) GameOver();
 }
+void vida::decrece2(){
+    vid2--;
+    qDebug()<<vid2;
+    if(vid2<1){
+            vid1=0;
+            decrece1();
+        };
+}
+void vida::decreceJazul(){
+    vid1=3;
+    qDebug()<<"joya azul";
+}
 void vida::GameOver(){
      qDebug()<<"Game  Over";
       gamm->scene->setBackgroundBrush(Qt::black);

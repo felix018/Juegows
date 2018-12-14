@@ -36,6 +36,29 @@
     </rect>
    </property>
   </widget>
+  <widget class="QLCDNumber" name="puntaje2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>64</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="guardado">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>10</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>guardar</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

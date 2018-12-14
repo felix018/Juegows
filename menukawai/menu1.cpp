@@ -46,6 +46,10 @@ void menu1::on_saved_clicked(){
         QString h = ui->usuario->text()+".txt";
         b = h.toLocal8Bit().constData();
         ofstream tenga;
+
+        qDebug()<<"guardado"<<endl;
+        qDebug()<<h<<endl;
+
         tenga.open(b,ios::out);
         if(tenga.fail())cout<<"NELL"<<endl;
         gamm = new game();

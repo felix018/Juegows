@@ -29,13 +29,14 @@ SOURCES += \
     personaje.cpp \
     game.cpp \
     disparos.cpp \
-    guerra.cpp \
     vida.cpp \
     villanos.cpp \
     proyectiles.cpp \
     trampa.cpp \
     aliens.cpp \
-    caida.cpp
+    caida.cpp \
+    load.cpp \
+    piedritas.cpp
 
 QT+= multimedia
 
@@ -45,13 +46,14 @@ HEADERS += \
     personaje.h \
     game.h \
     disparos.h \
-    guerra.h \
     vida.h \
     villanos.h \
     proyectiles.h \
     trampa.h \
     aliens.h \
-    caida.h
+    caida.h \
+    load.h \
+    piedritas.h
 
 FORMS += \
         mainwindow.ui \

@@ -18,6 +18,7 @@
 #include "disparos.h"
 #include "trampa.h"
 #include "caida.h"
+#include "joyas.h"
 #define WIDTH 1000
 #define HEIGHT 400
 
@@ -34,6 +35,7 @@ public:
     explicit game(QWidget *parent = nullptr);
     QGraphicsScene *scene;
     QGraphicsRectItem *rect;
+    QGraphicsRectItem *rec;
     trampa *trap;
     trampa *trick;
     trampa *team;
@@ -57,6 +59,7 @@ public:
     QGraphicsTextItem *tex;
     disparos *balin;
     disparos *balin1;
+    joyas *gem;
 
     QTimer *interacion;
 
@@ -65,6 +68,7 @@ public:
     QGraphicsPixmapItem *plat=new QGraphicsPixmapItem();
 
     vida *vid;
+    vida *vid2;
     void niveles();
     void puntajes();
     void boom();
@@ -82,6 +86,8 @@ public:
 
 private slots:
         //void on_save_clicked();
+
+    void on_guardado_clicked();
 
 public:
     void iniciar(int jugador = 0);
